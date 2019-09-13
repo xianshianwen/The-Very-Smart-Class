@@ -15,10 +15,12 @@
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
         android:layout_marginTop="126dp"
+        android:layout_marginBottom="118dp"
         android:text="账号："
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="52dp"
         android:text="密码："
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
@@ -40,64 +42,77 @@
         android:id="@+id/AccountEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginBottom="38dp"
         android:ems="10"
+        android:hint="请输入账号"
         android:inputType="textPersonName"
-        android:text="请输入账号"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/AccountText"
+        app:layout_constraintBottom_toTopOf="@+id/PswEdit"
         app:layout_constraintStart_toEndOf="@+id/AccountText" />
 
     <EditText
         android:id="@+id/PswEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
         android:ems="10"
         android:hint="请输入密码"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@+id/PswText"
         app:layout_constraintStart_toEndOf="@+id/PswText" />
 
-    <CheckBox
-        android:id="@+id/checkStu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:text="学生"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/PswText"
-        app:layout_constraintStart_toStartOf="@+id/PswText"
-        app:layout_constraintTop_toBottomOf="@+id/PswText" />
-
-    <CheckBox
-        android:id="@+id/checkTeacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:text="教师"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/checkStu"
-        app:layout_constraintStart_toEndOf="@+id/checkStu" />
-
     <Button
         android:id="@+id/Loginbtn"
         android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="43dp"
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
-        android:layout_marginTop="70dp"
         android:layout_marginEnd="38dp"
         android:layout_marginRight="38dp"
+        android:layout_marginBottom="256dp"
         android:background="@drawable/button_select"
         android:text="安全登录"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkStu" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="370dp"
+        android:checkedButton="@id/radioButton3"
+        android:orientation="horizontal"
+        android:paddingLeft="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/PswText"
+        app:layout_constraintStart_toStartOf="@+id/PswText"
+        app:layout_constraintTop_toBottomOf="@+id/AccountText"
+        tools:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="学生"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="教师"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
 </android.support.constraint.ConstraintLayout>
