@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 final String username = AccountEdit.getText().toString();
                 final String password = PswEdit.getText().toString();
                 //服务端地址
-                final String serverPath = "http://10.0.2.2:8080/TestService/servlet/LoginDateServlet";
+                final String serverPath = "http://192.168.43.193:8080/TestService/servlet/LoginDateServlet";
                 if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
                     Toast.makeText(MainActivity.this, "用户名或密码不能为空！", Toast.LENGTH_SHORT).show();
                 } else {
@@ -71,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
                                         public void run() {
                                             if (code.equals("-1")) {
                                                 Toast.makeText(MainActivity.this, "登录成功！", Toast.LENGTH_LONG).show();
-
+                                                Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
+                                                startActivity(intent);
                                             } else {
                                                 Toast.makeText(MainActivity.this, "登录失败！", Toast.LENGTH_LONG).show();
                                             }
@@ -88,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).start();
                 }
-                Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
-                startActivity(intent);
+
             }
         });
     }
